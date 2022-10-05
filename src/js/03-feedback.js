@@ -26,6 +26,18 @@ function onSubmit(evt) {
   const localData = localStorage.getItem('feedback-form-state');
   const localDataJSON = JSON.parse(localData);
 
+  if (inputEmail.value === '' && inputMessage.value === '') {
+    alert(`Все поля должны быть заполнены!`);
+    return;
+  }
+  if (inputEmail.value === '') {
+    alert(`Поле ${inputEmail.name.toUpperCase()} должно быть заполнено!`);
+    return;
+  }
+  if (inputMessage.value === '') {
+    alert(`Поле ${inputMessage.name.toUpperCase()} должно быть заполнено!`);
+    return;
+  }
   inputEmail.value = ' ';
   inputMessage.value = ' ';
   console.log(localDataJSON);
